@@ -1,0 +1,119 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(240, 240, 244);
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  #root {
+    flex-direction: column;
+  }
+}
+
+@font-face {
+  font-family: "HK";
+  src: url(./HK-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "HK";
+  src: url(./HK-SemiBold.ttf) format("truetype");
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.wrapper {
+  position: absolute;
+  width: 12vmax;
+  height: 12vmax;
+  cursor: pointer;
+}
+
+.wrapper:hover .sphere {
+  transition: opacity 0.1s ease-in;
+  opacity: 1;
+}
+
+.link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+}
+
+.linkText {
+  position: absolute;
+  color: black;
+  font-size: 2.4vmax;
+  font-family: "HK", Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.sphere {
+  transition: opacity 0.1s ease-in;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+}
+
+.sphere .orbit {
+  transform-style: preserve-3d;
+  animation: rotater 10s 0s infinite linear;
+  animation-direction: alternate-reverse;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0.2vmax;
+  border-style: solid;
+  border-radius: 50%;
+  color: aqua;
+}
+.orbit:nth-child(1) {
+  transform-style: preserve-3d;
+  transform: rotateY(0deg) rotateX(0deg);
+}
+.orbit:nth-child(2) {
+  transform: rotateY(60deg) rotateX(60deg);
+}
+.orbit:nth-child(3) {
+  transform: rotateY(120deg) rotateX(120deg);
+}
+.orbit:nth-child(4) {
+  transform: rotateY(180deg) rotateX(180deg);
+}
+.orbit:nth-child(5) {
+  transform: rotateY(240deg) rotateX(240deg);
+}
+.orbit:nth-child(6) {
+  transform: rotateY(300deg) rotateX(300deg);
+}
+
+@keyframes rotater {
+  to {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
