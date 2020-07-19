@@ -99,3 +99,9 @@ body {
     width: 85vw;
   }
 }
+
+@media (hover: none), (hover: on-demand) {
+  .des {
+    opacity: 1;
+  }
+}
