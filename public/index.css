@@ -15,12 +15,6 @@ body {
   height: 100%;
 }
 
-@media (max-aspect-ratio: 1/1) {
-  #root {
-    flex-direction: column;
-  }
-}
-
 @font-face {
   font-family: "HK";
   src: url(./HK-Regular.ttf) format("truetype");
@@ -52,11 +46,39 @@ body {
   opacity: 1;
 }
 
+.line {
+  position: absolute;
+  opacity: 0;
+  width: 30%;
+  height: 50%;
+  border-bottom: 0.3vmax solid aqua;
+  border-top: 0.3vmax solid aqua;
+  transition: opacity 0.1s ease-in;
+}
+
+.wrapper:hover .des {
+  transition: opacity 0.1s ease-in;
+  opacity: 1;
+}
+
+.des {
+  position: absolute;
+  opacity: 0;
+  top: 100%;
+  left: 50%;
+  width: 28vw;
+  transform: translateX(-50%);
+  transition: opacity 0.1s ease-in;
+  font-family: "HK", Helvetica, sans-serif;
+  color: black;
+  font-size: 1.4vmax;
+  text-align: center;
+}
+
 .link {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-
   position: absolute;
   z-index: 2;
 }
@@ -69,19 +91,11 @@ body {
   font-weight: bold;
 }
 
-.line {
-  /* animation: rotater 5s 0s infinite linear; */
-  position: absolute;
-  opacity: 0;
-  width: 30%;
-  height: 40%;
-  border-bottom: 0.3vmax solid aqua;
-  border-top: 0.3vmax solid aqua;
-  transition: opacity 0.1s ease-in;
-}
-/* 
-@keyframes rotater {
-  to {
-    transform: rotateY(360deg);
+@media (max-aspect-ratio: 1/1) {
+  #root {
+    flex-direction: column;
   }
-} */
+  .des {
+    width: 85vw;
+  }
+}
