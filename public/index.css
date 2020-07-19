@@ -91,17 +91,19 @@ body {
   font-weight: bold;
 }
 
+@media (hover: none), (hover: on-demand) {
+  .des {
+    opacity: 1;
+    width: 20vw;
+    font-size: 1.2vmax;
+  }
+}
+
 @media (max-aspect-ratio: 1/1) {
   #root {
     flex-direction: column;
   }
   .des {
     width: 85vw;
-  }
-}
-
-@media (hover: none), (hover: on-demand) {
-  .des {
-    opacity: 1;
   }
 }
